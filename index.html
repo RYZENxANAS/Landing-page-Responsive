@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="nav">
+            <h2>Travel-X</h2>
+            <button onclick="showsidebar()" class="menu-btn">&#9776;</button>
+            <ul class="nav-links">
+                <li>Home</li>
+                <li>Hill stations</li>
+                <li>Best Offer's</li>
+                <li>Our Sites</li>
+                <li>Contact</li>
+            </ul>
+            <button class="register-btn">Register</button>
+        </div>
+        <div style="color: white;" class="hero">
+            <p>Enjoy</p>
+            <h1>International Travel</h1>
+            <h2>Agency</h2>
+            <button class="fit">Book Your Tip</button>
+        </div>
+
+    </div>
+<script>
+   const showsidebar = () => {
+    let links = document.querySelector(".nav-links");
+    let nav = document.querySelector(".nav");
+    links.classList.toggle("active");
+    nav.classList.toggle("active");
+}
+
+// Close the sidebar when a link is clicked
+document.querySelectorAll('.nav-links li').forEach(item => {
+    item.addEventListener('click', () => {
+        let links = document.querySelector(".nav-links");
+        let nav = document.querySelector(".nav");
+        if (links.classList.contains('active')) {
+            links.classList.remove('active');
+            nav.classList.remove('active');
+        }
+    });
+});
+</script>
+</body>
+</html>
